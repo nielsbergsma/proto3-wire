@@ -137,13 +137,13 @@ import GHC.Exts (Word#)
 
 -- "ghc-prim" v0.6.1 defines `GHC.Prim.Ext.WORD64`, but we do not wish
 -- to require that version of "ghc-prim".  Therefore we define it locally.
-#if WORD_SIZE_IN_BITS < 64
-import GHC.IntWord64 (Word64#)
-type WORD64 = Word64#
-#else
+-- #if WORD_SIZE_IN_BITS < 64
+-- import GHC.IntWord64 (Word64#)
+-- type WORD64 = Word64#
+-- #else
 import GHC.Exts (Word#)
 type WORD64 = Word#
-#endif
+-- #endif
 
 -- $setup
 -- >>> :set -XOverloadedStrings
